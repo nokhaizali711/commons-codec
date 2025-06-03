@@ -171,7 +171,7 @@ public class MessageDigestAlgorithmsTest {
 
     @ParameterizedTest
     @MethodSource("data")
-    void testDigestPath(final String messageDigestAlgorithm, final OpenOption... options) throws IOException {
+    private void testDigestPath(final String messageDigestAlgorithm, final OpenOption... options) throws IOException {
         assumeTrue(DigestUtils.isAvailable(messageDigestAlgorithm));
         assertArrayEquals(digestTestData(messageDigestAlgorithm), DigestUtils.digest(DigestUtils.getDigest(messageDigestAlgorithm), getTestPath(), options));
         assertArrayEquals(digestTestData(messageDigestAlgorithm), DigestUtils.digest(DigestUtils.getDigest(messageDigestAlgorithm), getTestPath(), options));
